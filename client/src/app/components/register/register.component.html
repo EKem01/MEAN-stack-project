@@ -69,12 +69,15 @@
       <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>
       </div>
+      <div class="form-group">
+        <p>Already have an account? <a routerLink ="/login">Sign in</a>.</p>
+      </div>
       <div class="alert alert-warning" *ngIf="f.submitted && isRegisterFailed">
         Register failed!<br />{{ errorMessage }}
       </div>
     </form>
     <div class="alert alert-success" *ngIf="isSuccessful">
-      Your registration is successful!
+      Successfully registered!
     </div>
   </div>
 </div>

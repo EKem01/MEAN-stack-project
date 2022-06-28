@@ -43,7 +43,7 @@
           >
             <div *ngIf="password.errors['required']">Password is required</div>
             <div *ngIf="password.errors['minlength']">
-              Password must be at least 6 characters
+              Password must be at least 8 characters
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
         </div>
       </form>
       <div class="alert alert-success" *ngIf="isLoggedIn">
-        successfuly logged in
+        Logged in successfully!
       </div>
     </div>
   </div>
