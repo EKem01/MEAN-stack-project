@@ -1,5 +1,7 @@
-<div class="col-md-12">
-  <div class="card card-container">
+<div class="container">
+  <div class="form">
+    <h3>Sign-up Form</h3>
+    <hr>
     <form
       *ngIf="!isSuccessful"
       name="form"
@@ -69,8 +71,9 @@
       <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>
       </div>
+      <br>
       <div class="form-group">
-        <p>Already have an account? <a routerLink ="/login">Sign in</a>.</p>
+        <p class="para">Already have an account? <a routerLink ="/login">Sign-in</a>.</p>
       </div>
       <div class="alert alert-warning" *ngIf="f.submitted && isRegisterFailed">
         Register failed!<br />{{ errorMessage }}

@@ -5,3 +5,23 @@
 #register{
     margin-top: 5px;
 }
+
+.container{
+    background-color: #e5e4e2;
+    padding-top: 1%;
+    width: 500px;
+    height: 420px;
+    margin-top: 20px;
+}
+.form{
+    width: 300px;
+    margin: auto;
+    padding-top: 20px;
+}
+.para{
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+.form-group a{
+    text-decoration: none;
+}

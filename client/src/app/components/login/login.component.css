@@ -1,0 +1,15 @@
+
+.container{
+    background-color: #e5e4e2;
+    padding-top: 1%;
+    width: 500px;
+    height: 350px;
+}
+.form{
+    width: 300px;
+    margin: auto;
+    padding-top: 20px;
+}
+.form-group a{
+    text-decoration: none;
+}

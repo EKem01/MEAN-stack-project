@@ -1,5 +1,7 @@
-<div class="col-md-12">
-    <div class="card card-container">
+<div class="container">
+    <div class="form">
+      <h3>Login Form</h3>
+      <hr>
       <form
         *ngIf="!isLoggedIn"
         name="form"
@@ -15,6 +17,7 @@
             name="username"
             [(ngModel)]="form.username"
             required
+            minlength="3"
             #username="ngModel"
           />
           <div
@@ -22,7 +25,10 @@
             role="alert"
             *ngIf="username.errors && f.submitted"
           >
-            Username is required!
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors ['minlength']">
+            Username must be at least 3 characters
+          </div>
           </div>
         </div>
         <div class="form-group">
@@ -43,15 +49,20 @@
           >
             <div *ngIf="password.errors['required']">Password is required</div>
             <div *ngIf="password.errors['minlength']">
-              Password must be at least 8 characters
+              Password must be at least 6 characters
             </div>
           </div>
         </div>
         <br>
+
         <div class="form-group">
           <button class="btn btn-primary btn-block">
             Login
           </button>
+        </div>
+        <br>
+        <div class="form-group">
+          <p>Not registered yet? <a routerLink ="/register">Sign-up</a>.</p>
         </div>
         <div class="form-group">
           <div
