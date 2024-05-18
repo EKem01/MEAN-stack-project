@@ -1,26 +1,30 @@
 pipeline {
     agent any
-    environment {
-        NEW_VERSION = '1.3.0'
+    parameters {
+       // string(name: 'VERSION', defaultValue:'', description:'version to deploy on the server')
+        choice(name: '  VERSION', choices: ['1.1.0', '1.2.1', '1.3.0], description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description'')
     }
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                echo "Building version ${NEW_VERSION}"
+                echo 'Building the application..'
             }
         }
         stage('Test') {
+            when {
+                expression {
+                    params.executeTests
+                }
+            }
             steps {
                 echo 'Testing the application...'
             }
         }
         stage('Deploy') {
             steps {
-                script {
-                    env.ENV = input message: "select the environment to deploy to", ok: "Done", parameter: [choice(name: 'ONE', choices: ['dev', 'staging', 'prod'], description: '')]
-                     echo "Deploying to ${ENV}"
-                }
+                echo 'Deploying the application....'
+                echo "Deploying version ${params.VERSION}"
             }
         }
     }
